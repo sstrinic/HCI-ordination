@@ -30,7 +30,7 @@ export default function RootLayout({
               <Link href="/workhours">Working Hours</Link>
             </li>
             <li className="hover:bg-pink-700">
-              <Link href="/contact">Contact</Link>
+              <Link href="/login">Login</Link>
             </li>
             <li className="hover:bg-pink-700">
               <Link href="/about">About us</Link>
