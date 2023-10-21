@@ -24,7 +24,13 @@ export default function RootLayout({
               <Link href="/">Home</Link>
             </li>
             <li className="hover:bg-pink-700">
-              <Link href="/showcase">Showcase</Link>
+              <Link href="/services">Services</Link>
+            </li>
+            <li className="hover:bg-pink-700">
+              <Link href="/workhours">Working Hours</Link>
+            </li>
+            <li className="hover:bg-pink-700">
+              <Link href="/contact">Contact</Link>
             </li>
             <li className="hover:bg-pink-700">
               <Link href="/about">About us</Link>
