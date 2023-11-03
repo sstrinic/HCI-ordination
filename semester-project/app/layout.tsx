@@ -4,11 +4,11 @@ import "./globals.css";
 import Link from "next/link";
 
 const pages = {
-  home: "/",
-  services: "/services",
-  workhours: "/workhours",
-  login: "/login",
-  about: "/about",
+  Home: "/",
+  Services: "/services",
+  Workhours: "/workhours",
+  Login: "/login",
+  About: "/about",
 };
 
 //const inter = Inter({ subsets: ["latin"] });
@@ -26,15 +26,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <nav className="flex justify-center p-14 bg-green-400">
-          <ul className="flex gap-4 text-3xl max-md:flex-col max-md:text-2xl">
-            {Object.entries(pages).map(([name, path]) => (
-              <li key={name}>
-                <Link href={path}>{name}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <header>
+        <div className="containerHeader font-semibold tracking-wider">
+          <h2>Ordination Horvat</h2>
+          <nav>
+            <ul className="flex gap-4 max-md:flex-col max-md:text-2xl">
+              {Object.entries(pages).map(([name, path]) => (
+                <li key={name}>
+                  <Link href={path}>{name}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+        </header>
         {children}
       </body>
     </html>

@@ -23,3 +23,68 @@ body {
   font-family: "Cinzel", serif;
   font-size: 17px;
 }
+
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: var(--mainColor);
+  z-index: 2;
+}
+
+.containerHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 1092px;
+  margin: 0 auto;
+  padding: 0 15px;
+  text-align: center;
+  min-height: 7vh;
+}
+
+header h2 {
+  margin: 0;
+  padding: 12px 0;
+  color: #7fdbff;
+  font-size: 30px;
+}
+
+nav a {
+  padding: 8px 12px;
+  font-size: 17px;
+  color: #dddddd;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  .containerHeader {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+  }
+
+  header nav {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+  }
+
+  nav a {
+      font-size: medium;
+  }
+}
