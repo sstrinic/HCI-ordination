@@ -1,3 +1,3 @@
 ## Class project 4
 
-Design of Home page created with Figma: [StartPageDesing-v1.png](StartPageDesing-v1.png).
+Design of Home page created with Figma: [StartPageDesign-v1.png](StartPageDesign-v1.png).
