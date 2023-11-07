@@ -1,3 +1,3 @@
-## Public link to project
+## Class project 4
 
-https://hci-ordination.vercel.app/
+Design of Home page created with Figma: [StartPageDesing-v1.png](StartPageDesing-v1.png).
