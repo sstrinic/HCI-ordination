@@ -1,32 +1,32 @@
 import Image from "next/image";
 import bannerImg from "./banner.png";
-
-// export interface Img {
-//   message: string;
-//   url: string;
-// }
-
-// const BASE_API_URL = "https://random-d.uk/api/v2/quack";
-
-// const getImg = async (): Promise<Img> => {
-//   const data = await fetch(`${BASE_API_URL}`, { next: { revalidate: 300 } });
-//   return data.json();
-// };
+import ServicesList from "./_components/ServicesList";
 
 export default function Home() {
-  // const img = await getImg();
-
   return (
     <main className="flex flex-col justify-center">
-      <h1 className="flex justify-center p-14 text-4xl font-bold">Home Page</h1>
-      <div className="w-[1024px] aspect-video relative m-auto max-lg:w-full max-md:w-full">
+      <p className="flex justify-center [font-family:'Poppins',Helvetica] font-extrabold text-black pt-11 text-4xl text-center">
+          Compassionate Family Care You Can Trust
+        </p>
+        <p className="flex justify-center [font-family:'Poppins',Helvetica] font-light text-black p-6 pb-10 text-2xl text-center">
+          Your Partner in Health and Wellness
+        </p>
+      <div className="flex flex-col w-[1024px] aspect-video relative m-auto max-lg:w-full max-md:w-full">
         <Image
-          src={bannerImg} //{img.url}
-          alt="Duck img from public API"
+          src={bannerImg}
+          alt="Banner image"
           fill={true}
           object-fit="cover"
         ></Image>
       </div>
+      <p className="max-w-[1024px] [font-family:'Poppins',Helvetica] mt-11 font-light text-black text-center m-auto">
+          Welcome to Ordinacija Horvat, your trusted family medicine office. Our mission is to provide exceptional
+          healthcare services that prioritize your well-being. Whether you need a medical consultation, health checkup,
+          or specialist referral, our team of experienced professionals is here to help. With our patient-centric
+          approach and state-of-the-art facilities, we offer tailored healthcare solutions that meet your unique needs.
+          Book your appointment today and take the first step towards a healthier tomorrow.
+        </p>
+      <ServicesList />
     </main>
   );
 }

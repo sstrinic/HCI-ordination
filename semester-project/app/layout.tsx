@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 //import { Inter } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
+import NavBar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const pages = {
   Home: "/",
@@ -26,21 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header>
-        <div className="containerHeader font-semibold tracking-wider">
-          <h2>Ordination Horvat</h2>
-          <nav>
-            <ul className="flex gap-4 max-md:flex-col max-md:text-2xl">
-              {Object.entries(pages).map(([name, path]) => (
-                <li key={name}>
-                  <Link href={path}>{name}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-        </header>
+        <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );

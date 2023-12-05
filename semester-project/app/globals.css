@@ -7,8 +7,9 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --textColor: #001f3f;
-  --mainColor: #001f3f;
+  --mainColor: #0E4A87;
   --otherTextColor: #333333;
+  --buttonColor: #0C8C19;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,6 +33,10 @@ header {
   z-index: 2;
 }
 
+footer {
+  background-color: var(--mainColor);
+}
+
 .containerHeader {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,9 +55,7 @@ header {
 }
 
 header h2 {
-  margin: 0;
   padding: 12px 0;
-  color: #7fdbff;
   font-size: 30px;
 }
 
