@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from 'react';
 
 export type Page = {
   href: string;
@@ -18,11 +19,23 @@ const pages: Page[] = [
 
 const NavBar = () => {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(true);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <header>
         <div className="containerHeader font-semibold tracking-wider">
           <h2 className="linerz text-white font-thin tracking-[2.96px] [text-shadow:0px_5px_4px_#000000bd]">Ordinacija Horvat<span className="relative text-xs align-top">®</span></h2>
-          <nav className="max-md:hidden">
+            <div className="absolute burger-menu md:hidden self-end top-3">
+              <div className="burger-icon" onClick={toggleMenu}>
+                <div className="bar"></div>
+                <div className="bar"></div>
+                <div className="bar"></div>
+              </div>
+          </div>
+          <nav className={`max-md:hidden ${isOpen ? 'block' : 'hidden'}`}>
             <ul className="flex gap-4 max-md:flex-col max-md:text-2xl max-lg:text-sm">
             {pages.map(({ href, title }) => (
               <li key={href}>
@@ -44,7 +57,7 @@ const NavBar = () => {
             </ul>
           </nav>
         </div>
-        </header>
+      </header>
   );
 };
 
