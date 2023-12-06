@@ -21,8 +21,9 @@
 }
 
 body {
-  font-family: "Cinzel", serif;
+  font-family: "Poppins",Helvetica;
   font-size: 17px;
+  margin:auto;
 }
 
 header {
@@ -54,20 +55,30 @@ footer {
   min-height: 7vh;
 }
 
+.linerz h2::after, .linerz h2::before {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background-color: var(--textColor);
+  margin: 5px auto;
+}
+
+button{
+  display: block;
+  min-width: 200px;
+  padding: 10px 16px;
+  margin: 15px auto;
+  background-color: var(--buttonColor);
+  font-size: 18px;
+  line-height: 1.5;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
 header h2 {
   padding: 12px 0;
   font-size: 30px;
-}
-
-nav a {
-  padding: 8px 12px;
-  font-size: 17px;
-  color: #dddddd;
-  text-decoration: none;
-}
-
-nav a:hover {
-  text-decoration: underline;
 }
 
 @media only screen and (max-width: 768px) {
@@ -85,6 +96,11 @@ nav a:hover {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
+  }
+
+  header h2 {
+    align-self: flex-start;
+    font-size: 25px;
   }
 
   nav a {

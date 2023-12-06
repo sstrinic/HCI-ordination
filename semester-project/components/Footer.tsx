@@ -20,7 +20,7 @@ const FooterList = ({ title, items }: ListProps) => {
 const Footer = () => (
   <footer>
     <div className="flex flex-col py-5 mt-20 items-center gap-4 text-white [font-family:'Cinzel',Helvetica] text-center">
-      <h6 className="text-white font-thin [font-family:'Cinzel',Helvetica] tracking-[2.96px] [text-shadow:0px_5px_4px_#000000bd] text-2xl">Ordinacija Horvat®</h6>
+      <h6 className="text-white font-thin [font-family:'Cinzel',Helvetica] tracking-[2.96px] [text-shadow:0px_5px_4px_#000000bd] text-2xl">Ordinacija Horvat<span className="relative text-xs align-top">®</span></h6>
       <div className="flex flex-col">
           <FooterList
           title="Sitemap"

@@ -8,10 +8,10 @@ const ServiceCard = ({
   body,
 }: ServiceCardProps) => (
   <div
-      className={`flex flex-col  items-start gap-[18px] px-[30px] py-[22px] relative bg-[#dff3ff] rounded-[30px]`}
+      className={`flex flex-col  items-start gap-[18px] px-[30px] py-[22px] relative bg-[#dff3ff] rounded-[30px] max-md:mx-4`}
     >
       <div
-        className={`w-fit [font-family:'Poppins',Helvetica] font-normal text-black leading-[normal]`}
+        className={`w-fit [font-family:'Poppins',Helvetica] font-semibold text-black leading-[normal]`}
       >
         {title}
       </div>

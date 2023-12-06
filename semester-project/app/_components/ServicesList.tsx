@@ -20,11 +20,11 @@ const servicesTexts: ServiceCardProps[] = [
 ];
 
 const ServicesSection = () => (
-  <section className="container flex flex-col gap-20 items-center m-auto max-w-[1024px]">
-    <div className="text-center mt-4">
-      <h1 className="font-roboto-condensed text-3xl font-extrabold text-brand-purple-900">
+  <section className="container flex flex-col gap-7 items-center m-auto max-w-[1024px]">
+    <div className="text-center mt-4 linerz">
+      <h2 className="font-roboto-condensed text-3xl font-extrabold text-brand-purple-900">
         Services we provide:
-      </h1>
+      </h2>
     </div>
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
       {servicesTexts.map((servicesTexts) => (
