@@ -3,19 +3,19 @@ import ServiceCard, { ServiceCardProps } from "./ServiceCard";
 const servicesTexts: ServiceCardProps[] = [
   {
     title: "MEDICAL CONSULTATION",
-    body: "WE OFFER COMPREHENSIVE MEDICAL CONSULTATIONS WITH OUR EXPERIENCED DOCTORS, WHO WILL PROVIDE YOU WITH A THOROUGH EXAMINATION, DIAGNOSIS AND TREATMENT PLAN THAT ADDRESSES YOUR SPECIFIC NEEDS AND CONCERNS.",
+    body: "We offer comprehensive medical consultations with our experienced doctors, who will provide you with a thorough examination, diagnosis and treatment plan that addresses your specific needs and concerns.",
   },
   {
     title: "SPECIALIST REFERRAL",
-    body: "WE OFFER SPECIALIST REFERRAL SERVICES TO CONNECT YOU WITH THE RIGHT MEDICAL EXPERT, ENSURING YOU RECEIVE THE SPECIALIZED CARE YOU NEED TO ACHIEVE OPTIMAL HEALTH OUTCOMES.",
+    body: "We offer specialist referral services to connect you with the right medical expert, ensuring you receive the specialized care you need to achieve optimal health outcomes.",
   },
   {
     title: "HEALTH CHECKUP",
-    body: "OUR COMPREHENSIVE HEALTH CHECKUPS ARE DESIGNED TO ASSESS YOUR OVERALL HEALTH, IDENTIFY POTENTIAL HEALTH RISKS, AND PROVIDE YOU WITH AN ACTIONABLE PLAN TO MAINTAIN OPTIMAL HEALTH AND WELLBEING.",
+    body: "Our comprehensive health checkups are designed to assess your overall health, identify potential health risks, and provide you with an actionable plan to maintain optimal health and wellbeing.",
   },
   {
     title: "PREVENTIVE CARE",
-    body: "OUR PREVENTIVE CARE SERVICES ARE DESIGNED TO HELP YOU MAINTAIN OPTIMAL HEALTH AND WELLBEING, IDENTIFYING POTENTIAL HEALTH RISKS AND PROVIDING YOU WITH ACTIONABLE RECOMMENDATIONS TO REDUCE THOSE RISKS.",
+    body: "Our preventive care services are designed to help you maintain optimal health and wellbeing, identifying potential health risks and providing you with actionable recommendations to reduce those risks.",
   },
 ];
 
