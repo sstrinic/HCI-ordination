@@ -22,7 +22,8 @@ https://hci-ordination.vercel.app/
 | :--- | :--- |
 |Footer sitemap and social media links|Burger menu not working for smaller displays|
 |GitHub structure and descriptions||
-|TBD- CSM integration||
+|Contentful created, started||
+|About us page||
 
 </div>
 

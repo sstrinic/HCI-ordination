@@ -20,7 +20,7 @@ function About() {
             <Image src={sarahPatel} alt="Dr. Sarah Patel" width={200} className="h-48"></Image>
             <div className="mt-2">
               <p className="text-sm font-semibold">Dr. Sarah Patel</p>
-              <p className="text-xs text-gray-600">Experienced family physician specializing in preventive care and women's health.</p>
+              <p className="text-xs text-gray-600">Experienced family physician specializing in preventive care and women&apos;s health.</p>
             </div>
           </div>
 
