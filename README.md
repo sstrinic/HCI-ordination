@@ -21,7 +21,7 @@ https://hci-ordination.vercel.app/
 |   Implemented :white_check_mark: |  Problems  :x: |
 | :--- | :--- |
 |Footer sitemap and social media links|Burger menu not working for smaller displays|
-|GitHub structure and descriptions||
+|GitHub structure and descriptions|Vercel failing for empty tsx files|
 |Contentful created, started||
 |About us page||
 
