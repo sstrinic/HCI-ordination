@@ -1,5 +1,8 @@
 import Image from "next/image";
-import sarahPatel from "./dr_sarah_patel.jpg";
+import sarahPatel from "@/public/SarahPatel.jpg";
+import carlosRodriguez from "@/public/CarlosRodriguez.jpg";
+import jamesNguyen from "@/public/JamesNguyen.jpg";
+import emilyDawson from "@/public/EmilyDawson.jpg";
 
 function About() {
   return (
@@ -17,35 +20,35 @@ function About() {
         <h2 className="text-2xl text-center font-semibold my-8">Meet Our Team</h2>
         <div className="flex flex-col gap-5">
           <div className="mb-4 flex flex-row gap-3 mx-auto">
-            <Image src={sarahPatel} alt="Dr. Sarah Patel" width={200} className="h-48"></Image>
-            <div className="mt-2">
-              <p className="text-sm font-semibold">Dr. Sarah Patel</p>
-              <p className="text-xs text-gray-600">Experienced family physician specializing in preventive care and women&apos;s health.</p>
+            <Image src={sarahPatel} alt="Dr. Sarah Patel" width={200} className="h-48 rounded-lg border-[1px] border-neutral-800"></Image>
+            <div className="mt-2 flex flex-col justify-center">
+              <p className="text-base font-semibold">Dr. Sarah Patel</p>
+              <p className="text-sm text-gray-600">Experienced family physician specializing in preventive care and women&apos;s health.</p>
             </div>
           </div>
 
           <div className="mb-4 flex flex-row gap-3 mx-auto">
-            <div className="mt-2">
-              <p className="text-sm font-semibold">Dr. James Nguyen</p>
-              <p className="text-xs text-gray-600">Passionate about holistic healthcare and promoting wellness in all age groups.</p>
+            <div className="mt-2 flex flex-col justify-center">
+              <p className="text-base font-semibold">Dr. James Nguyen</p>
+              <p className="text-sm text-gray-600">Passionate about holistic healthcare and promoting wellness in all age groups.</p>
             </div>
-            <Image src={sarahPatel} alt="Dr. James Nguyen" width={200} className="h-48"></Image>
+            <Image src={jamesNguyen} alt="Dr. James Nguyen" width={200} className="h-48 rounded-lg border-[1px] border-neutral-800"></Image>
           </div>
 
           <div className="mb-4 flex flex-row gap-3 mx-auto">
-            <Image src={sarahPatel} alt="Nurse Emily Dawson" width={200} className="h-48"></Image>
-            <div className="mt-2">
-              <p className="text-sm font-semibold">Nurse Emily Dawson</p>
-              <p className="text-xs text-gray-600">Dedicated to patient well-being, with a focus on pediatric and adolescent health.</p>
+            <Image src={emilyDawson} alt="Nurse Emily Dawson" width={200} className="h-48 rounded-lg border-[1px] border-neutral-800"></Image>
+            <div className="mt-2 flex flex-col justify-center">
+              <p className="text-base font-semibold">Nurse Emily Dawson</p>
+              <p className="text-sm text-gray-600">Dedicated to patient well-being, with a focus on pediatric and adolescent health.</p>
             </div>
           </div>
 
           <div className="mb-4 flex flex-row gap-3 mx-auto">
-            <div className="mt-2">
-              <p className="text-sm font-semibold">Nurse Carlos Rodriguez</p>
-              <p className="text-xs text-gray-600">Enthusiastic healthcare professional with a passion for sports health and rehabilitation.</p>
+            <div className="mt-2 flex flex-col justify-center">
+              <p className="text-base font-semibold">Nurse Carlos Rodriguez</p>
+              <p className="text-sm text-gray-600">Enthusiastic healthcare professional with a passion for sports health and rehabilitation.</p>
             </div>
-            <Image src={sarahPatel} alt="Nurse Carlos Rodriguez" width={200} className="h-48"></Image>
+            <Image src={carlosRodriguez} alt="Nurse Carlos Rodriguez" width={200} className="h-48 rounded-lg border-[1px] border-neutral-800"></Image>
           </div>
         </div>
       </div>
