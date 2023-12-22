@@ -27,7 +27,7 @@ export default function Home() {
           approach and state-of-the-art facilities, we offer tailored healthcare solutions that meet your unique needs.
           Book your appointment today and take the first step towards a healthier tomorrow.
         </p>
-        <Link href={"/contact"}><button className="text-white">Schedule an appointment</button></Link>
+        <Link className="m-auto my-[15px]" href={"/contact"}><span className="scheduleButton">Schedule an appointment</span></Link>
       <ServicesList />
     </main>
   );

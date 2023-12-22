@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from 'react';
+import styles from './Navbar.module.css';
 
 export type Page = {
   href: string;
@@ -19,23 +20,46 @@ const pages: Page[] = [
 
 const NavBar = () => {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <header>
         <div className="containerHeader font-semibold tracking-wider">
           <h2 className="linerz text-white font-thin tracking-[2.96px] [text-shadow:0px_5px_4px_#000000bd]">Ordinacija Horvat<span className="relative text-xs align-top">®</span></h2>
-            <div className="absolute burger-menu md:hidden self-end top-3">
-              <div className="burger-icon" onClick={toggleMenu}>
-                <div className="bar"></div>
-                <div className="bar"></div>
-                <div className="bar"></div>
-              </div>
-          </div>
-          <nav className={`max-md:hidden ${isOpen ? 'block' : 'hidden'}`}>
+              <div
+                className={`self-end top-[19px] absolute ${styles.hamburgerBar} ${
+                  isOpen && styles.openHamburgerBar
+                }`}
+                onClick={toggleMenu}
+              >
+                <div
+                  className={`${styles.menuIconLine} ${
+                    isOpen ? styles.menuIconLineFirstX : styles.menuIconLineFirstXClose
+                  }`}
+                ></div>
+                <div
+                  className={`${styles.menuIconLine} ${
+                    isOpen ? styles.menuIconLineSecondHidden : styles.menuIconLineSecond
+                  }`}
+                ></div>
+                <div
+                  className={`${styles.menuIconLine} ${
+                    isOpen ? styles.menuIconLineThirdHidden : styles.menuIconLineThird
+                  }`}
+                ></div>
+                <div
+                  className={`${styles.menuIconLine} ${
+                    isOpen
+                      ? styles.menuIconLineSecondX
+                      : styles.menuIconLineSecondXClose
+                  }`}
+                ></div>
+            </div>
+          <nav className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
             <ul className="flex gap-4 max-md:flex-col max-md:text-2xl max-lg:text-sm">
             {pages.map(({ href, title }) => (
               <li key={href}>

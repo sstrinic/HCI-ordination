@@ -33,6 +33,6 @@ https://hci-ordination.vercel.app/
   
 |   Implemented :white_check_mark: |  Problems  :x: |
 | :--- | :--- |
-|TBD|TBD|
+|Fixed burger menu|TBD|
 
 </div>
