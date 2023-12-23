@@ -15,7 +15,7 @@ https://hci-ordination.vercel.app/
 
 ## Project timeline
 
-### Week 1 - current
+### Week 1
 <div align="center">
   
 |   Implemented :white_check_mark: |  Problems  :x: |
@@ -27,12 +27,13 @@ https://hci-ordination.vercel.app/
 
 </div>
 
-### Week 2
+### Week 2 - current
 
-  <div align="center">
+<div align="center">
   
 |   Implemented :white_check_mark: |  Problems  :x: |
 | :--- | :--- |
-|Fixed burger menu|TBD|
+|Fixed burger menu|Fetching CMS data|
+|Implemented contact page||
 
 </div>
