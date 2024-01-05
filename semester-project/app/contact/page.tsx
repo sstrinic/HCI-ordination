@@ -10,8 +10,9 @@ function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="mb-4 col-span-2">
-              <label htmlFor="doctor" className="block text-sm font-semibold text-gray-600">Choose a Doctor</label>
+              <label htmlFor="doctor" className="block text-sm font-semibold text-gray-600">Choose a department/doctor</label>
               <select id="doctor" name="doctor" className="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500" required>
+                <option value="NewPatient">Reception</option>
                 <option value="DrSarahPatel">Dr. Sarah Patel</option>
                 <option value="DrJamesNguyen">Dr. James Nguyen</option>
               </select>
