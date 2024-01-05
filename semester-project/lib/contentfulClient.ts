@@ -1,29 +1,51 @@
-// import { TypeCategory } from "@/app/(contentful)/types/TypeCategory";
-// import {
-//   TypeProductDetailItem,
-//   TypeProductListItem,
-// } from "@/app/(contentful)/types/TypeProduct";
+import { BlogCategory } from "@/app/(contentful)/types/BlogCategory";
+import { TypeProductListItem } from "@/app/(contentful)/types/TypeProduct";
 
-const gqlAllProductsQuery = `query ProductList {
-  productCollection {
-    items {
-      sys {
-        id
-      }
-      name,
-      description,
-      heroImage {
-        url,
+const gqlAllBlogPostsQuery = `query BlogPosts{
+  blogPostCollection{
+    items{
+      sys {id}
+      title,
+      text,
+      label,
+      image {
         title
-      }
-      categoriesCollection {
-        items {
-          label
-        }
+        url
       }
     }
   }
 }`;
+
+interface BlogPostsResponse {
+  productCollection: {
+    items: BlogPost[];
+  };
+}
+
+interface BlogPost {
+  sys: {
+    id: string;
+  };
+  title: string;
+  text: string;
+  image: {
+    title: string;
+    url: string;
+  };
+  label: BlogCategory["label"];
+}
+
+interface BlogPostDetail {
+  product: {
+  title: string;
+  text: string;
+  image: {
+    title: string;
+    url: string;
+  };
+  label: BlogCategory["label"];
+}
+}
 
 const getAllCategoriesQuery = `query {
   categoryCollection {
@@ -33,111 +55,26 @@ const getAllCategoriesQuery = `query {
     }
   }`;
 
-const gqlProductByIdQuery = `query GetProductById($productId: String!) {
-  product(id: $productId) {
-    name
-    price
-    description
-    currencyCode
-    listed
-    heroImage {
+const gqlProductByIdQuery = `query GetPostById($postID: String!) {
+  blogPost(id: $postID) {
+    title
+    text
+    image {
       url
-    }
-    categoriesCollection {
-      items {
-        label
-      }
-    }
-    imagesCollection {
-      items {
-        url
-      }
-    }
-    richTextDescription {
-      json
-      links {
-        entries {
-          __typename
-          block {
-            sys {
-              id
-            }
-            ... on CodeBlockSection {
-              __typename
-              title
-              language
-              content
-            }
-          }
-        }
-      }
     }
   }
 }
 `;
 
-interface ProductCollectionResponse {
-  productCollection: {
-    items: ProductItem[];
-  };
-}
-
-interface ProductItem {
-  sys: {
-    id: string;
-  };
-  name: string;
-  description: string;
-  heroImage: {
-    url: string;
-    title: string;
-  };
-  categoriesCollection: {
-    items: {
-      label: TypeCategory["label"];
-    }[];
-  };
-}
-
 interface CategoryCollectionResponse {
   categoryCollection: {
-    items: TypeCategory[];
-  };
-}
-
-interface DetailProductResponse {
-  product: {
-    name: string;
-    imagesCollection: {
-      items: {
-        url: string;
-      }[];
-    };
-    richTextDescription: {
-      json: any;
-      links: any;
-    };
-    price: number;
-    currencyCode: "CHF" | "EUR" | "GBP" | "USD";
-    listed: boolean;
-    categories: {
-      label: TypeCategory["label"];
-    }[];
-    description: string;
-    heroImage: {
-      url: string;
-    };
-    categoriesCollection: {
-      items: {
-        label: TypeCategory["label"];
-      }[];
-    };
+    items: BlogCategory[];
   };
 }
 
 const baseUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master`;
 
-const getAllProducts = async (): Promise<TypeProductListItem[]> => {
+const getAllPosts = async (): Promise<TypeProductListItem[]> => {
   try {
     const response = await fetch(baseUrl, {
       method: "POST",
@@ -145,22 +82,22 @@ const getAllProducts = async (): Promise<TypeProductListItem[]> => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
       },
-      body: JSON.stringify({ query: gqlAllProductsQuery }),
+      body: JSON.stringify({ query: gqlAllBlogPostsQuery }),
     });
 
-    // Get the response as JSON, cast as ProductCollectionResponse
+    // Get the response as JSON, cast as BlogPostsResponse
     const body = (await response.json()) as {
-      data: ProductCollectionResponse;
+      data: BlogPostsResponse;
     };
 
     // Map the response to the format we want
     const products: TypeProductListItem[] =
       body.data.productCollection.items.map((item) => ({
         id: item.sys.id,
-        name: item.name,
-        description: item.description,
-        heroImage: item.heroImage.url,
-        categories: item.categoriesCollection.items.map((category) => category),
+        name: item.title,
+        description: item.text,
+        image: item.image.url,
+        categories: item.label,
       }));
 
     return products;
@@ -171,37 +108,37 @@ const getAllProducts = async (): Promise<TypeProductListItem[]> => {
   }
 };
 
-const getAllCategories = async (): Promise<TypeCategory[]> => {
-  try {
-    const response = await fetch(baseUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
-      },
-      body: JSON.stringify({ query: getAllCategoriesQuery }),
-    });
-    const body = (await response.json()) as {
-      data: CategoryCollectionResponse;
-    };
+// const getAllCategories = async (): Promise<BlogCategory[]> => {
+//   try {
+//     const response = await fetch(baseUrl, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+//       },
+//       body: JSON.stringify({ query: getAllCategoriesQuery }),
+//     });
+//     const body = (await response.json()) as {
+//       data: CategoryCollectionResponse;
+//     };
 
-    const categories: TypeCategory[] = body.data.categoryCollection.items.map(
-      (item) => ({
-        label: item.label,
-      })
-    );
+//     const categories: BlogCategory[] = body.data.categoryCollection.items.map(
+//       (item) => ({
+//         label: item.label,
+//       })
+//     );
 
-    return categories;
-  } catch (error) {
-    console.log(error);
+//     return categories;
+//   } catch (error) {
+//     console.log(error);
 
-    return [];
-  }
-};
+//     return [];
+//   }
+// };
 
-const getProductById = async (
+const getPostId = async (
   id: string
-): Promise<TypeProductDetailItem | null> => {
+): Promise<TypeProductListItem | null> => {
   try {
     const response = await fetch(baseUrl, {
       method: "POST",
@@ -211,29 +148,22 @@ const getProductById = async (
       },
       body: JSON.stringify({
         query: gqlProductByIdQuery,
-        variables: { productId: id },
+        variables: { postID: id },
       }),
     });
 
     const body = (await response.json()) as {
-      data: DetailProductResponse;
+      data: BlogPostDetail;
     };
 
     const responseProduct = body.data.product;
-
-    const product: TypeProductDetailItem = {
-      id: id,
-      name: responseProduct.name,
-      images: responseProduct.imagesCollection.items.map((item) => item.url),
-      richTextDescription: responseProduct.richTextDescription,
-      price: responseProduct.price,
-      currencyCode: responseProduct.currencyCode,
-      listed: responseProduct.listed,
-      description: responseProduct.description,
-      categories: responseProduct.categoriesCollection.items.map((c) => c),
-      heroImage: responseProduct.heroImage.url,
-    };
-
+    const product: TypeProductListItem ={
+        id: id,
+        name: responseProduct.title,
+        description: responseProduct.text,
+        image: responseProduct.image.url,
+        categories: responseProduct.label,
+      };
     return product;
   } catch (error) {
     console.log(error);
@@ -243,9 +173,9 @@ const getProductById = async (
 };
 
 const contentfulService = {
-  getAllProducts,
-  getAllCategories,
-  getProductById,
+  getAllPosts,
+  // getAllCategories,
+  getPostId,
 };
 
 export default contentfulService;

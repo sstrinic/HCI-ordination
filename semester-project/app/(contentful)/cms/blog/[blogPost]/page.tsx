@@ -6,10 +6,10 @@ type Params = {
 };
 
 const BlogPost = async ({ params }: { params: Params }) => {
-  const product = await contentfulService.getProductById(params.productId);
+  const product = await contentfulService.getPostId(params.productId);
 
   if (!product) {
-    return <div>Product not found</div>;
+    return <div>{product}Product not found</div>;
   }
 
   return (
@@ -20,18 +20,16 @@ const BlogPost = async ({ params }: { params: Params }) => {
       <div className="grid grid-cols-2 gap-4 w-3/4 relative">
         <div className="flex flex-col gap-4 justify-between">
           <div className="grid grid-cols-2 gap-2">
-            {product.images?.map((image) => (
-              <div key={image} className="relative w-full h-32">
+              <div key={product.name} className="relative w-full h-32">
                 <Image
                   fill
                   style={{ objectFit: "cover" }}
                   className="rounded-md"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  src={image as string}
+                  src={product.image as string}
                   alt={product.name as string}
                 />
               </div>
-            ))}
           </div>
           <div className="flex flex-col">
             <div className="mb-2">{product.description}</div>
