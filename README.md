@@ -36,6 +36,6 @@ https://hci-ordination.vercel.app/
 |Fixed burger menu|Fetching CMS data|
 |Implemented contact page||
 |Added blog page||
-|Stareted services page||
+|Started services page||
 
 </div>
