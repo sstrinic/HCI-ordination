@@ -34,7 +34,7 @@ https://hci-ordination.vercel.app/
 |   Implemented :white_check_mark: |  Problems  :x: |
 | :--- | :--- |
 |Fixed burger menu|Fetching CMS data|
-|Implemented contact page||
+|Implemented contact page|Services not shown|
 |Added blog page||
 |Started services page||
 
