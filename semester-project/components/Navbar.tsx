@@ -29,7 +29,7 @@ const NavBar = () => {
   return (
     <header>
         <div className="containerHeader font-semibold tracking-wider">
-          <h2 className="linerz text-white font-thin tracking-[2.96px] [text-shadow:0px_5px_4px_#000000bd]">Ordinacija Horvat<span className="relative text-xs align-top">®</span></h2>
+        <Link href={"/"}><h2 className="linerz text-white font-thin tracking-[2.96px] [text-shadow:0px_5px_4px_#000000bd]">Ordinacija Horvat<span className="relative text-xs align-top">®</span></h2></Link>
               <div
                 className={`self-end top-[19px] absolute ${styles.hamburgerBar} ${
                   isOpen && styles.openHamburgerBar

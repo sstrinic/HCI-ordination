@@ -1,4 +1,6 @@
 import Link from "next/link";
+import styles from './services.module.css';
+import slika1 from '@/public/slika1-min.jpg';
 
 export interface Service {
   userId: number;
@@ -18,7 +20,51 @@ export default async function Services() {
   const servicesList = await getServices();
   return (
     <main className="flex flex-col items-center max-w-5xl m-auto">
-      <h1 className="flex justify-center p-14 text-4xl font-bold">Services Index Page</h1>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div className={styles.transformImg}>
+            <img src="http://localhost/slika1-min.jpg" alt='slika-usluge'/>
+            <div className={styles.serviceText}>
+            <span>Najbolja medicinska oprema u regiji</span>
+            </div>
+        </div>
+
+        <div className={styles.transformImg}>
+            <img src="http://localhost/slika2-min.jpg" alt='slika-usluge'/>
+            <div className={styles.serviceText}>
+            <span>Besplatan prvi pregled</span>
+            </div>
+        </div>
+
+        <div className={styles.transformImg}>
+            <img src="http://localhost/slika3-min.jpg" alt='slika-usluge'/>
+            <div className={styles.serviceText}>
+            <span>Ugodno osoblje u vašim najtežim trenutcima</span>
+            </div>
+        </div>
+
+        <div className={styles.transformImg}>
+            <img src="http://localhost/slika4-min.jpg" alt='slika-usluge'/>
+            <div className={styles.serviceText}>
+            <span>Dostupni i preko mobilnih telefona</span>
+            </div>
+        </div>
+
+        <div className={styles.transformImg}>
+            <img src="http://localhost/slika5-min.jpg" alt='slika-usluge'/>
+            <div className={styles.serviceText}>
+            <span>Obavezno nošenje zaštitni maski</span>
+          </div>
+        </div>
+
+        <div className={styles.transformImg}>
+            <img src="http://localhost/slika6-min.jpg" alt='slika-usluge'/>
+            <div className={styles.serviceText}>
+            <span>Minimalistički uređene prostorije</span>
+            </div>
+        </div>
+      </div>
+
+      {/* <h1 className="flex justify-center p-14 text-4xl font-bold">Services Index Page</h1>
       <ul className="flex flex-col gap-8 pb-8">
         {servicesList.map((serv) => (
           <li key={serv.id}>
@@ -29,7 +75,7 @@ export default async function Services() {
             </Link>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </main>
   );
 }
