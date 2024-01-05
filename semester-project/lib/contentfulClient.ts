@@ -164,6 +164,8 @@ const getPostId = async (
         image: responseProduct.image.url,
         categories: responseProduct.label,
       };
+    console.log("Easter egg");
+    console.log(product);
     return product;
   } catch (error) {
     console.log(error);
