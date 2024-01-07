@@ -2,12 +2,12 @@ import Image from "next/image";
 import contentfulService from "@/lib/contentfulClient";
 
 type Params = {
-  productId: string;
+  blogPost: string;
 };
 
 const BlogPost = async ({ params }: { params: Params }) => {
-  const product = await contentfulService.getPostId(params.productId);
-
+  const product = await contentfulService.getPostId(params.blogPost);
+  
   if (!product) {
     return <div>{product}Product not found</div>;
   }
@@ -33,6 +33,7 @@ const BlogPost = async ({ params }: { params: Params }) => {
           </div>
           <div className="flex flex-col">
             <div className="mb-2">{product.description}</div>
+            <div className="mb-2">{product.categories}</div>
           </div>
         </div>
       </div>

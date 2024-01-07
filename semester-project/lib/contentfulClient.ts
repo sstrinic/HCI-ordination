@@ -59,6 +59,7 @@ const gqlProductByIdQuery = `query GetPostById($postID: String!) {
   blogPost(id: $postID) {
     title
     text
+    label
     image {
       url
     }
@@ -99,7 +100,6 @@ const getAllPosts = async (): Promise<TypeProductListItem[]> => {
         image: item.image.url,
         categories: item.label,
       }));
-
     return products;
   } catch (error) {
     console.log(error);
@@ -137,7 +137,7 @@ const getAllPosts = async (): Promise<TypeProductListItem[]> => {
 // };
 
 const getPostId = async (
-  id: string
+  ids: string
 ): Promise<TypeProductListItem | null> => {
   try {
     const response = await fetch(baseUrl, {
@@ -148,24 +148,25 @@ const getPostId = async (
       },
       body: JSON.stringify({
         query: gqlProductByIdQuery,
-        variables: { postID: id },
+        variables: { postID: ids },
       }),
     });
 
     const body = (await response.json()) as {
       data: BlogPostDetail;
     };
-
-    const responseProduct = body.data.product;
+    console.log(body);
+    const responseProduct = body.data.blogPost;
+    console.log(responseProduct);
+    console.log("222222222222222222222222");
     const product: TypeProductListItem ={
-        id: id,
+        id: "70QUXwffyU6Fkhhdfhi9e6", //id: ids
         name: responseProduct.title,
         description: responseProduct.text,
-        image: responseProduct.image.url,
+        // image: responseProduct.image.url,
         categories: responseProduct.label,
       };
-    console.log("Easter egg");
-    console.log(product);
+
     return product;
   } catch (error) {
     console.log(error);
