@@ -36,6 +36,7 @@ interface BlogPost {
 }
 
 interface BlogPostDetail {
+  blogPost: any;
   product: {
   title: string;
   text: string;
@@ -156,14 +157,14 @@ const getPostId = async (
       data: BlogPostDetail;
     };
     console.log(body);
-    const responseProduct = body.data.product;
+    const responseProduct = body.data.blogPost;
     console.log(responseProduct);
     console.log("222222222222222222222222");
     const product: TypeProductListItem ={
         id: "70QUXwffyU6Fkhhdfhi9e6", //id: ids
         name: responseProduct.title,
         description: responseProduct.text,
-        // image: responseProduct.image.url,
+        image: responseProduct.image,
         categories: responseProduct.label,
       };
 

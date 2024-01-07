@@ -26,7 +26,7 @@ const BlogPost = async ({ params }: { params: Params }) => {
                   style={{ objectFit: "cover" }}
                   className="rounded-md"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  src={product.image as string}
+                  src={product.image ? product.image as string : ""}
                   alt={product.name as string}
                 />
               </div>
