@@ -156,7 +156,7 @@ const getPostId = async (
       data: BlogPostDetail;
     };
     console.log(body);
-    const responseProduct = body.data.blogPost;
+    const responseProduct = body.data.product;
     console.log(responseProduct);
     console.log("222222222222222222222222");
     const product: TypeProductListItem ={
