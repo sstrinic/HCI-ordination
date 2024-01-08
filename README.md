@@ -27,7 +27,7 @@ https://hci-ordination.vercel.app/
 
 </div>
 
-### Week 2 - current
+### Week 2 
 
 <div align="center">
   
@@ -37,5 +37,15 @@ https://hci-ordination.vercel.app/
 |Implemented contact page|Services not shown|
 |Added blog page||
 |Started services page||
+
+</div>
+
+### Week 3 
+
+<div align="center">
+  
+|   Implemented :white_check_mark: |  Problems  :x: |
+| :--- | :--- |
+|Fetching from CMS works||
 
 </div>
