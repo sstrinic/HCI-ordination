@@ -40,12 +40,14 @@ https://hci-ordination.vercel.app/
 
 </div>
 
-### Week 3 
+### Week 3 - current
 
 <div align="center">
   
 |   Implemented :white_check_mark: |  Problems  :x: |
 | :--- | :--- |
 |Fetching from CMS works||
+|Added 404 custom page||
+|Fixed CMS cache not reloading||
 
 </div>
