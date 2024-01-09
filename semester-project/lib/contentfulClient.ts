@@ -1,5 +1,5 @@
 import { BlogCategory } from "@/app/(contentful)/types/BlogCategory";
-import { TypeProductListItem } from "@/app/(contentful)/types/TypeProduct";
+import { TypeBlogDetailItem, TypeBlogListItem } from "@/app/(contentful)/types/TypeBlog";
 
 const gqlAllBlogPostsQuery = `query BlogPosts{
   blogPostCollection{
@@ -17,7 +17,7 @@ const gqlAllBlogPostsQuery = `query BlogPosts{
 }`;
 
 interface BlogPostsResponse {
-  productCollection: {
+  blogPostCollection: {
     items: BlogPost[];
   };
 }
@@ -54,6 +54,7 @@ const gqlProductByIdQuery = `query GetPostById($postID: String!) {
     text
     label
     image {
+      title
       url
     }
   }
@@ -62,7 +63,7 @@ const gqlProductByIdQuery = `query GetPostById($postID: String!) {
 
 const baseUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master`;
 
-const getAllPosts = async (): Promise<TypeProductListItem[]> => {
+const getAllPosts = async (): Promise<TypeBlogListItem[]> => {
   try {
     const response = await fetch(baseUrl, {
       method: "POST",
@@ -77,13 +78,11 @@ const getAllPosts = async (): Promise<TypeProductListItem[]> => {
     const body = (await response.json()) as {
       data: BlogPostsResponse;
     };
-
-    const products: TypeProductListItem[] =
-      body.data.productCollection.items.map((item) => ({
+    const products: TypeBlogListItem[] =
+      body.data.blogPostCollection.items.map((item) => ({
         id: item.sys.id,
         name: item.title,
         description: item.text,
-        image: item.image.url,
         categories: item.label,
       }));
     return products;
@@ -96,7 +95,7 @@ const getAllPosts = async (): Promise<TypeProductListItem[]> => {
 
 const getPostId = async (
   ids: string
-): Promise<TypeProductListItem | null> => {
+): Promise<TypeBlogDetailItem | null> => {
   try {
     const response = await fetch(baseUrl, {
       method: "POST",
@@ -115,14 +114,13 @@ const getPostId = async (
       data: BlogPostDetail;
     };
     const responseProduct = body.data.blogPost;
-    const product: TypeProductListItem ={
-        id: ids, 
-        name: responseProduct.title,
-        description: responseProduct.text,
-        image: responseProduct.image,
-        categories: responseProduct.label,
-      };
-
+    const product: TypeBlogDetailItem ={
+      id: ids, 
+      name: responseProduct.title,
+      description: responseProduct.text,
+      image: responseProduct.image?.url,
+      categories: responseProduct.label,
+    };
     return product;
   } catch (error) {
     console.log(error);

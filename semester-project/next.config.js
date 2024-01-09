@@ -12,6 +12,11 @@ module.exports = {
         port: "",
         pathname: "/api/**",
       },
+      {
+        protocol: "https",
+        hostname: "images.ctfassets.net",
+        port: "",
+      }
     ],
   },
 };

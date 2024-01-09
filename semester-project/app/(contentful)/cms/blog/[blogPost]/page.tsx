@@ -13,20 +13,19 @@ const BlogPost = async ({ params }: { params: Params }) => {
   }
 
   return (
-    <main className="container flex flex-col items-center gap-10 mb-10">
+    <main className="container flex flex-col items-center gap-10 mb-10 w-[1092px] m-auto">
       <h1 className="font-roboto-condensed text-6xl font-extrabold text-brand-purple-900 my-4">
         {product?.name}
       </h1>
-      <div className="grid grid-cols-2 gap-4 w-3/4 relative">
+      <div className="w-3/4 relative">
         <div className="flex flex-col gap-4 justify-between">
-          <div className="grid grid-cols-2 gap-2">
-              <div key={product.name} className="relative w-full h-32">
+          <div className="">
+              <div key={product.name} className="relative w-[300px] h-[300px]">
                 <Image
                   fill
                   style={{ objectFit: "cover" }}
                   className="rounded-md"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  src={product.image ? product.image as string : ""}
+                  src={product.image ? product.image as string : "https://images.ctfassets.net/y5exkuexzl7j/6HWyZsyeWYdB9nJBPNvQyF/c49342103d0fd36dd23db985dc163ae0/default-img.jpg"}
                   alt={product.name as string}
                 />
               </div>
@@ -43,8 +42,8 @@ const BlogPost = async ({ params }: { params: Params }) => {
           __html: documentToHtmlString(product?.richTextDescription?.json),
         }}
       /> */}
-      <div className="mt-10 prose prose-h1:text-brand-purple-800">
-      </div>
+      {/* <div className="mt-10 prose prose-h1:text-brand-purple-800">
+      </div> */}
     </main>
   );
 };
