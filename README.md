@@ -49,5 +49,6 @@ https://hci-ordination.vercel.app/
 |Fetching from CMS works||
 |Added 404 custom page||
 |Fixed CMS cache not reloading||
+|Added simple blog post look||
 
 </div>
