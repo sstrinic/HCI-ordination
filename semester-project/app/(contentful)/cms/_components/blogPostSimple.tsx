@@ -1,6 +1,12 @@
 import React from 'react';
 
-const BlogPostics = ({ title, text, imageUrl }) => {
+interface BlogPosticsProps {
+  title: string;
+  text: string;
+  imageUrl: string;
+}
+
+const BlogPostics: React.FC<BlogPosticsProps> = ({ title, text, imageUrl }) => {
   return (
     <div className="blog-post">
       <h2 className="blog-post-title">{title}</h2>

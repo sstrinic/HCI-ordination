@@ -1,7 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 
-const BlogPost = ({ title, text, imageUrl }) => {
+interface BlogPosticProps {
+  title: string;
+  text: string;
+  imageUrl: string;
+}
+
+const BlogPostic: React.FC<BlogPosticProps> = ({ title, text, imageUrl }) => {
   return (
     <div className="max-w-2xl mx-auto bg-white p-6 rounded-md shadow-md my-8">
       <h2 className="text-3xl font-bold mb-4">{title}</h2>
@@ -20,4 +26,4 @@ const BlogPost = ({ title, text, imageUrl }) => {
   );
 };
 
-export default BlogPost;
+export default BlogPostic;
