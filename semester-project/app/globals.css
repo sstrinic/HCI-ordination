@@ -26,6 +26,10 @@ body {
   margin:auto;
 }
 
+main {
+  min-height: calc(100vh - 35vh - 5px);
+}
+
 header {
   position: -webkit-sticky;
   position: sticky;

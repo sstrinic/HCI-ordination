@@ -1,5 +1,6 @@
 import Image from "next/image";
 import contentfulService from "@/lib/contentfulClient";
+import BlogPostic from "../../_components/blogPost";
 
 type Params = {
   blogPost: string;
@@ -13,8 +14,9 @@ const BlogPost = async ({ params }: { params: Params }) => {
   }
 
   return (
-    <main className="container flex flex-col items-center gap-10 mb-10 w-[1092px] m-auto">
-      <h1 className="font-roboto-condensed text-6xl font-extrabold text-brand-purple-900 my-4">
+    <main className="container flex flex-col items-center gap-10 mb-10 md:w-[1092px] m-auto">
+      <BlogPostic key={product.id} title={product.name} text={product.description} imageUrl={product.image} />
+      {/* <h1 className="font-roboto-condensed text-6xl font-extrabold text-brand-purple-900 my-4">
         {product?.name}
       </h1>
       <div className="w-3/4 relative">
@@ -35,7 +37,7 @@ const BlogPost = async ({ params }: { params: Params }) => {
             <div className="mb-2">{product.categories}</div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <div
         className="mt-10 prose prose-h1:text-brand-purple-800"
         dangerouslySetInnerHTML={{
