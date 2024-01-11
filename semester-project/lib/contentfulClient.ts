@@ -1,4 +1,3 @@
-import { BlogCategory } from "@/app/(contentful)/types/BlogCategory";
 import { TypeBlogDetailItem, TypeBlogListItem } from "@/app/(contentful)/types/TypeBlog";
 
 const gqlAllBlogPostsQuery = `query BlogPosts{
@@ -32,7 +31,7 @@ interface BlogPost {
     title: string;
     url: string;
   };
-  label: BlogCategory["label"];
+  label: string[];
 }
 
 interface BlogPostDetail {
@@ -44,7 +43,7 @@ interface BlogPostDetail {
     title: string;
     url: string;
   };
-  label: BlogCategory["label"];
+  label: string[];
 }
 }
 

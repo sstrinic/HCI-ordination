@@ -97,7 +97,7 @@ header h2 {
       display: flex;
   }
 
-  header h2 {
+  header a {
     align-self: flex-start;
     font-size: 25px;
   }
