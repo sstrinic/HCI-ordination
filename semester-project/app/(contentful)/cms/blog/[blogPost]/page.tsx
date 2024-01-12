@@ -1,6 +1,6 @@
-import Image from "next/image";
 import contentfulService from "@/lib/contentfulClient";
 import BlogPostic from "../../_components/blogPost";
+import Link from "next/link";
 
 type Params = {
   blogPost: string;
@@ -15,7 +15,13 @@ const BlogPost = async ({ params }: { params: Params }) => {
 
   return (
     <main className="container flex flex-col items-center gap-10 mb-10 md:w-[1092px] m-auto">
-      <BlogPostic key={product.id} title={product.name} text={product.description} imageUrl={product.image ? product.image as string : "https://images.ctfassets.net/y5exkuexzl7j/6HWyZsyeWYdB9nJBPNvQyF/c49342103d0fd36dd23db985dc163ae0/default-img.jpg"} />
+      <BlogPostic 
+      key={product.id} 
+      title={product.name} 
+      text={product.description} 
+      labels={product.categories}
+      imageUrl={product.image ? product.image as string : "https://images.ctfassets.net/y5exkuexzl7j/6HWyZsyeWYdB9nJBPNvQyF/c49342103d0fd36dd23db985dc163ae0/default-img.jpg"} />
+      <Link href={"/cms/blog/"}><span>Back</span></Link>
       {/* <h1 className="font-roboto-condensed text-6xl font-extrabold text-brand-purple-900 my-4">
         {product?.name}
       </h1>

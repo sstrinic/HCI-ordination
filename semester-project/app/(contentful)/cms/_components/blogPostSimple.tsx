@@ -4,9 +4,10 @@ interface BlogPosticsProps {
   title: string;
   text: string;
   imageUrl: string;
+  labels: string[];
 }
 
-const BlogPostics: React.FC<BlogPosticsProps> = ({ title, text, imageUrl }) => {
+const BlogPostics: React.FC<BlogPosticsProps> = ({ title, text, imageUrl, labels }) => {
   return (
     <div className="blog-post">
       <h2 className="blog-post-title">{title}</h2>

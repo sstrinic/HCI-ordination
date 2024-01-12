@@ -20,7 +20,7 @@ export default function Home() {
           object-fit="cover"
         ></Image>
       </div>
-      <p className="max-w-[1024px] mt-11 mb-5 font-light text-black text-center m-auto">
+      <p className="max-w-[1024px] mt-11 mb-5 font-light text-black md:text-center m-auto max-md:px-6">
           Welcome to Ordinacija Horvat, your trusted family medicine office. Our mission is to provide exceptional
           healthcare services that prioritize your well-being. Whether you need a medical consultation, health checkup,
           or specialist referral, our team of experienced professionals is here to help. With our patient-centric
