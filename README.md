@@ -46,9 +46,9 @@ https://hci-ordination.vercel.app/
   
 |   Implemented :white_check_mark: |  Problems  :x: |
 | :--- | :--- |
-|Fetching from CMS works||
-|Added 404 custom page||
+|Fetching from CMS works|Services not displayed|
+|Added 404 custom page|Date modified not displayed|
 |Fixed CMS cache not reloading||
-|Added simple blog post look||
+|Added simple blog post & list look||
 
 </div>
