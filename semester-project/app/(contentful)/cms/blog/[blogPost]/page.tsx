@@ -20,8 +20,9 @@ const BlogPost = async ({ params }: { params: Params }) => {
       title={product.name} 
       text={product.description} 
       labels={product.categories}
+      publishedAt={product.publishedAt}
       imageUrl={product.image ? product.image as string : "https://images.ctfassets.net/y5exkuexzl7j/6HWyZsyeWYdB9nJBPNvQyF/c49342103d0fd36dd23db985dc163ae0/default-img.jpg"} />
-      <Link href={"/cms/blog/"}><span>Back</span></Link>
+      <Link href={"/cms/blog/"}><span className="scheduleButton">Back</span></Link>
       {/* <h1 className="font-roboto-condensed text-6xl font-extrabold text-brand-purple-900 my-4">
         {product?.name}
       </h1>

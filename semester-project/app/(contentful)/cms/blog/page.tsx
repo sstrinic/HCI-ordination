@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FC } from "react";
 import CategoryFilter from "../_components/categoryFilter";
 import LabelLister from "@/components/LabelList";
+import Date from "@/components/date";
 
 export type SearchParams = {
   searchParams: Record<string, string | string[] | undefined>;
@@ -35,8 +36,7 @@ const CmsPage: FC<SearchParams> = async ({ searchParams }) => {
               <dl>
                 <dt className="text-gray-500">Last modified</dt>
                 <dd className="text-base font-medium leading-6">
-                  <span>01.01.1970.</span>
-                  {/* <time dateTime={product.date}>{formatDate(date, siteMetadata.locale)}</time> */}
+                <Date dateString={product.publishedAt} />
                 </dd>
               </dl>
               <div className="space-y-3 xl:col-span-3">

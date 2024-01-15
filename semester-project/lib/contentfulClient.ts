@@ -4,6 +4,7 @@ const gqlAllBlogPostsQuery = `query BlogPosts{
   blogPostCollection{
     items{
       sys {id}
+      sys {publishedAt}
       title,
       text,
       label,
@@ -24,6 +25,7 @@ interface BlogPostsResponse {
 interface BlogPost {
   sys: {
     id: string;
+    publishedAt: string;
   };
   title: string;
   text: string;
@@ -37,6 +39,9 @@ interface BlogPost {
 interface BlogPostDetail {
   blogPost: any;
   product: {
+  sys: {
+    date: string;
+  };
   title: string;
   text: string;
   image: {
@@ -49,6 +54,7 @@ interface BlogPostDetail {
 
 const gqlProductByIdQuery = `query GetPostById($postID: String!) {
   blogPost(id: $postID) {
+    sys {publishedAt}
     title
     text
     label
@@ -58,7 +64,6 @@ const gqlProductByIdQuery = `query GetPostById($postID: String!) {
     }
   }
 }`;
-
 
 const baseUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master`;
 
@@ -83,6 +88,7 @@ const getAllPosts = async (): Promise<TypeBlogListItem[]> => {
         name: item.title,
         description: item.text,
         categories: item.label,
+        publishedAt: item.sys.publishedAt,
       }));
     return products;
   } catch (error) {
@@ -119,6 +125,7 @@ const getPostId = async (
       description: responseProduct.text,
       image: responseProduct.image?.url,
       categories: responseProduct.label,
+      publishedAt: responseProduct.sys.publishedAt,
     };
     return product;
   } catch (error) {

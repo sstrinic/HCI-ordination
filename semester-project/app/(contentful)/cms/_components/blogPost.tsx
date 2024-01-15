@@ -1,12 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import LabelLister from "@/components/LabelList";
+import Date from "@/components/date";
 
 interface BlogPosticProps {
   title: string;
   text: string;
   imageUrl: string;
   labels: string[];
+  publishedAt: string;
 }
 
 const BlogPostic: React.FC<BlogPosticProps> = ({
@@ -14,6 +16,7 @@ const BlogPostic: React.FC<BlogPosticProps> = ({
   text,
   imageUrl,
   labels,
+  publishedAt,
 }) => {
   return (
     <div className="max-w-2xl mx-auto bg-white p-6 rounded-md shadow-md my-8">
@@ -33,7 +36,7 @@ const BlogPostic: React.FC<BlogPosticProps> = ({
       <p className="text-gray-700">{text}</p>
       <LabelLister labels={labels}/>
       <p className="text-gray-700">
-        <b>Last Modified:</b> 01.01.1970.
+        <b>Last Modified:</b> <Date dateString={publishedAt} />
       </p>
     </div>
   );
