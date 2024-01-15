@@ -40,7 +40,7 @@ https://hci-ordination.vercel.app/
 
 </div>
 
-### Week 3 - current
+### Week 3
 
 <div align="center">
   
@@ -50,5 +50,15 @@ https://hci-ordination.vercel.app/
 |Added 404 custom page|Date modified not displayed|
 |Fixed CMS cache not reloading||
 |Added simple blog post & list look||
+
+</div>
+
+### Week 4 - current
+
+<div align="center">
+  
+|   Implemented :white_check_mark: |  Problems  :x: |
+| :--- | :--- |
+|Date modified works now||
 
 </div>
