@@ -46,6 +46,7 @@ const CmsPage: FC<SearchParams> = async ({ searchParams }) => {
                       {product.name}
                     </Link>
                   </h3>
+                  <hr/>
                   <div className="flex flex-wrap">
                   <LabelLister labels={product.categories}/>
                   </div>
