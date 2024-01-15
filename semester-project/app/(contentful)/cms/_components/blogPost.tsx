@@ -19,7 +19,7 @@ const BlogPostic: React.FC<BlogPosticProps> = ({
   publishedAt,
 }) => {
   return (
-    <div className="max-w-2xl mx-auto bg-white p-6 rounded-md shadow-md my-8">
+    <div className="max-w-2xl mx-auto bg-white p-6 rounded-md shadow-md mt-8">
       <h2 className="text-3xl font-bold mb-4">{title}</h2>
       <div className="relative h-64 mb-4">
         <Image

@@ -3,7 +3,7 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 function Contact() {
   return (
       <div className="max-w-[900px] mx-auto mt-8 bg-white p-6 rounded-md shadow-md">
-        <h1 className="text-4xl font-bold mb-6 text-center text-blue-500">Contact Us</h1>
+        <h1 className="text-4xl font-bold mb-6 text-center">Contact Us</h1>
         <p className="text-gray-700 mb-6 text-center">
           Have questions or need assistance? Use the form below to get in touch with us.
         </p>

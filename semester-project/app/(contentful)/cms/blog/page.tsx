@@ -51,7 +51,7 @@ const CmsPage: FC<SearchParams> = async ({ searchParams }) => {
                   </div>
                 </div>
                 <div className="prose max-w-none">
-                  {product.description}
+                  {product.description.slice(0,250)+"... "}<Link href={"/cms/blog/"+product.id} className="text-red-700">Read more</Link>
                 </div>
               </div>
             </article>
