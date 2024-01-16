@@ -23,7 +23,7 @@ const CmsPage: FC<SearchParams> = async ({ searchParams }) => {
     : products;
 
   return (
-    <main className="container flex flex-col items-center gap-10 mb-10 md:w-[1092px] m-auto">
+    <main className="container flex flex-col items-center gap-10 mb-10 md:w-[1092px] m-auto bg-white">
       <h1 className="flex justify-center font-extrabold text-black pt-11 text-4xl max-md:text-4xl text-center">
         Blog Posts
       </h1>

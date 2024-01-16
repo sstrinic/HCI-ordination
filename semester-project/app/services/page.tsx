@@ -6,7 +6,7 @@ const Services = async () => {
   const allServices = await contentfulService.getAllServices();
 
   return (
-    <main className="max-w-[1092px] mx-auto mt-8 p-6">
+    <main className="max-w-[1092px] mx-auto mt-8 p-6 bg-white">
       <div id='desc-top'>
             <h1 className='text-4xl font-bold mb-6 text-center'>Services</h1>
             <h3 className='text-center max-md:text-left'> Our mission is to provide quality service to patients both in the office and in the field. We are focused on preventive examinations as well as treatment of acute diseases and monitoring and control of chronic diseases. To achieve this, we hired the best consultants who, in cooperation with our teams, take care of your health. We have cooperation with the best laboratories in New York, and we have also organized online support and advice.</h3>
