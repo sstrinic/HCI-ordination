@@ -103,6 +103,10 @@ header h2 {
 
   header a {
     align-self: flex-start;
+    margin: auto 0;
+  }
+
+  header h2 {
     font-size: 25px;
   }
 

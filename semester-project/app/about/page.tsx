@@ -6,7 +6,7 @@ import emilyDawson from "@/public/EmilyDawson.jpg";
 
 function About() {
   return (
-    <div className="max-w-[900px] mx-auto mt-8 bg-white p-6 rounded-md shadow-md">
+    <div className="max-w-[900px] mx-auto mt-8 bg-white p-6 max-md:py-0 md:rounded-md md:shadow-md">
       <h1 className="text-3xl font-semibold mb-4">About Us</h1>
       <p className="text-gray-700 mb-4">
         At the Family Medicine Office, we believe in providing more than just healthcare – we offer a comforting space where your family becomes a part of ours. With a commitment to compassionate, patient-centered care, our dedicated team of healthcare professionals is here to guide you on your journey to optimal health and well-being.
@@ -20,7 +20,7 @@ function About() {
         <h2 className="text-2xl text-center font-semibold my-8">Meet Our Team</h2>
         <div className="flex flex-col gap-5">
           <div className="mb-4 flex flex-row gap-3 mx-auto">
-            <Image src={sarahPatel} alt="Dr. Sarah Patel" width={200} className="h-48 rounded-lg border-[1px] border-neutral-800"></Image>
+            <Image src={sarahPatel} alt="Dr. Sarah Patel" width={200} className="md:h-48 h-44 rounded-lg border-[1px] border-neutral-800 md:w-48 w-44"></Image>
             <div className="mt-2 flex flex-col justify-center">
               <p className="text-base font-semibold">Dr. Sarah Patel</p>
               <p className="text-sm text-gray-600">Experienced family physician specializing in preventive care and women&apos;s health.</p>
@@ -32,11 +32,11 @@ function About() {
               <p className="text-base font-semibold">Dr. James Nguyen</p>
               <p className="text-sm text-gray-600">Passionate about holistic healthcare and promoting wellness in all age groups.</p>
             </div>
-            <Image src={jamesNguyen} alt="Dr. James Nguyen" width={200} className="h-48 rounded-lg border-[1px] border-neutral-800"></Image>
+            <Image src={jamesNguyen} alt="Dr. James Nguyen" width={200} className="md:h-48 h-44 rounded-lg border-[1px] border-neutral-800 md:w-48 w-44"></Image>
           </div>
 
           <div className="mb-4 flex flex-row gap-3 mx-auto">
-            <Image src={emilyDawson} alt="Nurse Emily Dawson" width={200} className="h-48 rounded-lg border-[1px] border-neutral-800"></Image>
+            <Image src={emilyDawson} alt="Nurse Emily Dawson" width={200} className="md:h-48 h-44 rounded-lg border-[1px] border-neutral-800 md:w-48 w-44"></Image>
             <div className="mt-2 flex flex-col justify-center">
               <p className="text-base font-semibold">Nurse Emily Dawson</p>
               <p className="text-sm text-gray-600">Dedicated to patient well-being, with a focus on pediatric and adolescent health.</p>
@@ -48,7 +48,7 @@ function About() {
               <p className="text-base font-semibold">Nurse Carlos Rodriguez</p>
               <p className="text-sm text-gray-600">Enthusiastic healthcare professional with a passion for sports health and rehabilitation.</p>
             </div>
-            <Image src={carlosRodriguez} alt="Nurse Carlos Rodriguez" width={200} className="h-48 rounded-lg border-[1px] border-neutral-800"></Image>
+            <Image src={carlosRodriguez} alt="Nurse Carlos Rodriguez" width={200} className="md:h-48 h-44 rounded-lg border-[1px] border-neutral-800 md:w-48 w-44"></Image>
           </div>
         </div>
       </div>
