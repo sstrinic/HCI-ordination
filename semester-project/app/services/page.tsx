@@ -3,7 +3,7 @@ import contentfulService from "@/lib/contentfulClient";
 import { FC } from "react";
 import Image from "next/image";
 
-type Service = {
+export type Service = {
   title: string;
   text: string;
   img:string;
