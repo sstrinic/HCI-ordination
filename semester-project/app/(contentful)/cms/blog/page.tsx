@@ -23,17 +23,17 @@ const CmsPage: FC<SearchParams> = async ({ searchParams }) => {
     : products;
 
   return (
-    <main className="container flex flex-col items-center gap-10 w-[1092px] m-auto">
-      <h1 className="font-roboto-condensed text-5xl font-extrabold text-brand-purple-900 my-4">
+    <main className="container flex flex-col items-center gap-10 mb-10 md:w-[1092px] m-auto">
+      <h1 className="flex justify-center font-extrabold text-black pt-11 text-4xl max-md:text-4xl text-center">
         Blog Posts
       </h1>
       <CategoryFilter/>
-      <ul className="grid gap-8">
+      <ul className="grid gap-4">
         {filteredProducts.map((product) => {
           return (
-            <li key={product.id} className="py-4">
+            <li key={product.id} className="py-4 max-md:px-6">
             <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-              <dl>
+              <dl className="max-md:hidden">
                 <dt className="text-gray-500">Last modified</dt>
                 <dd className="text-base font-medium leading-6">
                 <Date dateString={product.publishedAt} />

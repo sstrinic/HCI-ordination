@@ -63,7 +63,7 @@ const NavBar = () => {
             <ul className="flex gap-4 max-md:flex-col max-md:text-2xl max-lg:text-sm">
             {pages.map(({ href, title }) => (
               <li key={href}>
-                <Link href={href}>
+                <Link href={href} onClick={toggleMenu}>
                   <span
                     className={cn(
                       "text-white py-[8px] px-[11px] rounded-lg",

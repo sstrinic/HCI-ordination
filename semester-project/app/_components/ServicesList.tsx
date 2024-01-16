@@ -22,7 +22,7 @@ const servicesTexts: ServiceCardProps[] = [
 const ServicesSection = () => (
   <section className="container flex flex-col gap-7 items-center m-auto max-w-[1024px]">
     <div className="text-center mt-4 linerz">
-      <h2 className="font-roboto-condensed text-3xl font-extrabold text-brand-purple-900">
+      <h2 className="font-roboto-condensed text-2xl md:text-3xl font-extrabold text-brand-purple-900">
         Services we provide:
       </h2>
     </div>

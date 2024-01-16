@@ -6,10 +6,10 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="flex flex-col justify-center">
-      <p className="flex justify-center font-extrabold text-black pt-11 text-4xl text-center">
+      <p className="flex justify-center font-extrabold text-black pt-11 text-4xl max-md:text-3xl text-center">
           Compassionate Family Care You Can Trust
         </p>
-        <p className="flex justify-center font-light text-black p-6 pb-10 text-2xl text-center">
+        <p className="flex justify-center font-light text-black p-6 pb-10 text-2xl max-md:text-1xl text-center">
           Your Partner in Health and Wellness
         </p>
       <div className="flex flex-col w-[1024px] aspect-video relative m-auto max-lg:w-full max-md:w-full">
