@@ -1,4 +1,4 @@
-import { TypeBlogDetailItem, TypeBlogListItem } from "@/app/(contentful)/types/TypeBlog";
+import { TypeBlogDetailItem, TypeBlogListItem, TypeServiceItem } from "@/app/(contentful)/types/TypeBlog";
 
 const gqlAllBlogPostsQuery = `query BlogPosts{
   blogPostCollection{
@@ -15,6 +15,47 @@ const gqlAllBlogPostsQuery = `query BlogPosts{
     }
   }
 }`;
+
+const gqlProductByIdQuery = `query GetPostById($postID: String!) {
+  blogPost(id: $postID) {
+    sys {publishedAt}
+    title
+    text
+    label
+    image {
+      title
+      url
+    }
+  }
+}`;
+
+const gqlServicesQuery = `query AllServices {
+  serviceCollection{
+    items{
+      name
+      description
+      image {
+        title
+        url
+      }
+    }
+  }
+}`;
+
+interface Serv {
+  name: string;
+  description: string;
+  image: {
+    title: string;
+    url: string;
+  };
+}
+
+interface ServResponse {
+  serviceCollection: {
+    items: Serv[];
+  }
+}
 
 interface BlogPostsResponse {
   blogPostCollection: {
@@ -51,19 +92,6 @@ interface BlogPostDetail {
   label: string[];
 }
 }
-
-const gqlProductByIdQuery = `query GetPostById($postID: String!) {
-  blogPost(id: $postID) {
-    sys {publishedAt}
-    title
-    text
-    label
-    image {
-      title
-      url
-    }
-  }
-}`;
 
 const baseUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master`;
 
@@ -135,9 +163,39 @@ const getPostId = async (
   }
 };
 
+const getAllServices = async (): Promise<TypeServiceItem[]> => {
+  try {
+    const response = await fetch(baseUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+      },
+      cache: 'no-store',
+      body: JSON.stringify({ query: gqlServicesQuery }),
+    });
+
+    const body = (await response.json()) as {
+      data: ServResponse;
+    };
+    const allServices: TypeServiceItem[] =
+      body.data.serviceCollection.items.map((item) => ({
+        title: item.name,
+        text: item.description,
+        img: item.image.url,
+      }));
+    return allServices;
+  } catch (error) {
+    console.log(error);
+
+    return [];
+  }
+};
+
 const contentfulService = {
   getAllPosts,
   getPostId,
+  getAllServices,
 };
 
 export default contentfulService;

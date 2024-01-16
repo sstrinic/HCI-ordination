@@ -1,81 +1,47 @@
-import Link from "next/link";
 import styles from './services.module.css';
-import slika1 from '@/public/slika1-min.jpg';
+import contentfulService from "@/lib/contentfulClient";
+import { FC } from "react";
+import Image from "next/image";
 
 export interface Service {
-  userId: number;
-  id: number;
   title: string;
-  body: string;
+  text: string;
+  img:string;
 }
 
-const BASE_API_URL = "https://jsonplaceholder.typicode.com";
+const Services: FC<Service> = async () => {
+  const allServices = await contentfulService.getAllServices();
 
-const getServices = async (): Promise<Service[]> => {
-  const data = await fetch(`${BASE_API_URL}/posts`);
-  return data.json();
-};
-
-export default async function Services() {
-  const servicesList = await getServices();
   return (
-    <main className="flex flex-col items-center max-w-5xl m-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-        <div className={styles.transformImg}>
-            <img src="http://localhost/slika1-min.jpg" alt='slika-usluge'/>
-            <div className={styles.serviceText}>
-            <span>Najbolja medicinska oprema u regiji</span>
-            </div>
-        </div>
-
-        <div className={styles.transformImg}>
-            <img src="http://localhost/slika2-min.jpg" alt='slika-usluge'/>
-            <div className={styles.serviceText}>
-            <span>Besplatan prvi pregled</span>
-            </div>
-        </div>
-
-        <div className={styles.transformImg}>
-            <img src="http://localhost/slika3-min.jpg" alt='slika-usluge'/>
-            <div className={styles.serviceText}>
-            <span>Ugodno osoblje u vašim najtežim trenutcima</span>
-            </div>
-        </div>
-
-        <div className={styles.transformImg}>
-            <img src="http://localhost/slika4-min.jpg" alt='slika-usluge'/>
-            <div className={styles.serviceText}>
-            <span>Dostupni i preko mobilnih telefona</span>
-            </div>
-        </div>
-
-        <div className={styles.transformImg}>
-            <img src="http://localhost/slika5-min.jpg" alt='slika-usluge'/>
-            <div className={styles.serviceText}>
-            <span>Obavezno nošenje zaštitni maski</span>
+    <main className="max-w-[1092px] mx-auto mt-8 p-6">
+      <div id='desc-top'>
+            <h1 className='text-4xl font-bold mb-6 text-center'>Services</h1>
+            <h3 className='text-center'> Our mission is to provide quality service to patients both in the office and in the field. We are focused on preventive examinations as well as treatment of acute diseases and monitoring and control of chronic diseases. To achieve this, we hired the best consultants who, in cooperation with our teams, take care of your health. We have cooperation with the best laboratories in New York, and we have also organized online support and advice.</h3>
           </div>
-        </div>
-
-        <div className={styles.transformImg}>
-            <img src="http://localhost/slika6-min.jpg" alt='slika-usluge'/>
-            <div className={styles.serviceText}>
-            <span>Minimalistički uređene prostorije</span>
-            </div>
-        </div>
-      </div>
-
-      {/* <h1 className="flex justify-center p-14 text-4xl font-bold">Services Index Page</h1>
-      <ul className="flex flex-col gap-8 pb-8">
-        {servicesList.map((serv) => (
-          <li key={serv.id}>
-            <Link href={`services/${serv.id}`}>
-              <span className="text-2xl text-purple-500">
-                Service {serv.title}
-              </span>
-            </Link>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <ul>
+      {allServices.map((service) => {
+        return (
+          <li key={service.title}>
+          <div className={styles.transformImg}>
+              <Image
+                src={service.img}
+                alt={service.title}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-md"
+              />
+              <div className={styles.serviceText}>
+                <span>{service.text}</span>
+              </div>
+          </div>
           </li>
-        ))}
-      </ul> */}
+        );
+      })}
+      </ul>
+      </div>
     </main>
   );
 }
+
+export default Services;

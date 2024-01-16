@@ -9,3 +9,9 @@ export interface TypeBlogListItem {
 export interface TypeBlogDetailItem extends TypeBlogListItem {
   image?: string;
 }
+
+export interface TypeServiceItem {
+  title: string;
+  text: string;
+  img: string;
+}
