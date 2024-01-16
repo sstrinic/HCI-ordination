@@ -25,7 +25,7 @@ const Services = async () => {
                       className="rounded-md"
                     />
                     <div className={styles.serviceText}>
-                      <span className='max-md:text-sm'>{service.text}</span>
+                      <span className='max-md:text-sm text-lg font-semibold'>{service.text}</span>
                     </div>
                 </div>
                 <p>{service.title}</p>

@@ -42,8 +42,6 @@
     margin: 0;
     color: var(--otherTextColor);
     text-align: center;
-    font-size: 25px;
-    font-weight: bolder;
     -webkit-transition: 0.5s all ease-in-out;
     -o-transition: 0.5s all ease-in-out;
     transition: 0.5s all ease-in-out;
@@ -54,7 +52,7 @@
   }
   
   .transformImg:hover img {
-    opacity: 0.3;
+    opacity: 0.25;
   }
 
   @media only screen and (max-width: 768px) {
