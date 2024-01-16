@@ -1,15 +1,8 @@
 import styles from './services.module.css';
 import contentfulService from "@/lib/contentfulClient";
-import { FC } from "react";
 import Image from "next/image";
 
-export type Service = {
-  title: string;
-  text: string;
-  img:string;
-}
-
-const Services: FC<Service> = async () => {
+const Services = async () => {
   const allServices = await contentfulService.getAllServices();
 
   return (
