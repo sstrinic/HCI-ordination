@@ -9,12 +9,10 @@
   .transformImg {
     position: relative;
     -webkit-box-flex: 1;
-    -ms-flex: 1 0 22rem;
-    flex: 1 0 22rem;
     margin: 1rem;
     cursor: pointer;
     overflow: hidden;
-    height: 300px;
+    height: 250px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -58,4 +56,9 @@
   .transformImg:hover img {
     opacity: 0.3;
   }
-  
+
+  @media only screen and (max-width: 768px) {
+    .transformImg img {
+    height:190px;
+    }
+}
