@@ -11,11 +11,8 @@ export type SearchParams = {
 
 const CmsPage: FC<SearchParams> = async ({ searchParams }) => {
   const products = await contentfulService.getAllPosts();
-  //const categories = await contentfulService.getAllCategories();
-  //searchParams._category = "world";
   const filteredProducts = searchParams._category
     ? products.filter((product) => {
-      console.log("Product: "+product.categories)
         return product.categories?.some((category) => {
           return category == searchParams._category;
         });

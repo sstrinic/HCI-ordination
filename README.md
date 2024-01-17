@@ -59,8 +59,9 @@ https://hci-ordination.vercel.app/
   
 |   Implemented :white_check_mark: |  Problems  :x: |
 | :--- | :--- |
-|Date modified works now|Filter not working|
-|Blog post list mobile friendly||
+|Date modified works now|Contact page not balanced|
+|Blog post list mobile friendly|About us needs more data|
 |Services displayed||
+|Filter implemented & working||
 
 </div>
