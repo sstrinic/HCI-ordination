@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import LabelLister from "@/components/LabelList";
 import Date from "@/components/date";
+import MarkdownRenderer from "@/components/MarkdownRendere";
 
 interface BlogPosticProps {
   title: string;
@@ -33,7 +34,7 @@ const BlogPostic: React.FC<BlogPosticProps> = ({
           className="rounded-md"
         />
       </div>
-      <p className="text-gray-700">{text}</p>
+      <p className="text-gray-700"><MarkdownRenderer source={text} /></p>
       <LabelLister labels={labels}/>
       <p className="text-gray-700">
         <b>Last Modified:</b> <Date dateString={publishedAt} />
