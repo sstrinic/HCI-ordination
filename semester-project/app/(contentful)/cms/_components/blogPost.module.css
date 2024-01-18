@@ -1,0 +1,8 @@
+.markerDown h1, .markerDown h2, .markerDown h3{
+    font-size: revert;
+    font-weight: revert;
+}
+
+.markerDown ol{
+    list-style: revert;
+}

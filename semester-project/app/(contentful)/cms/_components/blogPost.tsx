@@ -3,6 +3,7 @@ import Image from "next/image";
 import LabelLister from "@/components/LabelList";
 import Date from "@/components/date";
 import MarkdownRenderer from "@/components/MarkdownRendere";
+import styles from "./blogPost.module.css";
 
 interface BlogPosticProps {
   title: string;
@@ -20,21 +21,19 @@ const BlogPostic: React.FC<BlogPosticProps> = ({
   publishedAt,
 }) => {
   return (
-    <div className="max-w-2xl mx-auto bg-white p-6 rounded-md shadow-md mt-8">
-      <h2 className="text-3xl font-bold mb-4">{title}</h2>
-      <div className="relative h-64 mb-4">
+    <div className="bg-white max-w-[1000px] p-6 px-10 rounded-md shadow-md mt-8">
+      <h2 className="text-3xl mx-auto font-bold mb-4">{title}</h2>
+      <div className="flex md:h-72 mb-6 justify-center">
         <Image
-          src={
-            imageUrl ||
-            "https://images.ctfassets.net/y5exkuexzl7j/6HWyZsyeWYdB9nJBPNvQyF/c49342103d0fd36dd23db985dc163ae0/default-img.jpg"
-          }
+          src={imageUrl}
           alt={title}
-          layout="fill"
+          height={10000}
+          width={500}
           objectFit="cover"
           className="rounded-md"
         />
       </div>
-      <p className="text-gray-700"><MarkdownRenderer source={text} /></p>
+      <p className={`text-gray-700 py-4 ${styles.markerDown}`}><MarkdownRenderer source={text} /></p>
       <LabelLister labels={labels}/>
       <p className="text-gray-700">
         <b>Last Modified:</b> <Date dateString={publishedAt} />
