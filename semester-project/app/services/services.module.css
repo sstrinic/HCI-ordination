@@ -38,13 +38,15 @@
   
   .serviceText {
     opacity: 0;
-    position: absolute;
-    margin: 0;
-    color: var(--otherTextColor);
-    text-align: center;
-    -webkit-transition: 0.5s all ease-in-out;
-    -o-transition: 0.5s all ease-in-out;
-    transition: 0.5s all ease-in-out;
+  position: absolute;
+  margin: 0;
+  color: var(--otherTextColor);
+  text-align: center;
+  font-size: 25px;
+  font-weight: bolder;
+  -webkit-transition: 0.5s all ease-in-out;
+  -o-transition: 0.5s all ease-in-out;
+  transition: 0.5s all ease-in-out;
   }
   
   .transformImg:hover .serviceText {
