@@ -63,5 +63,6 @@ https://hci-ordination.vercel.app/
 |Blog post list mobile friendly|About us needs more data|
 |Services displayed||
 |Filter implemented & working||
+|MarkDown renderer implemented||
 
 </div>
