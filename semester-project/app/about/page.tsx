@@ -7,7 +7,7 @@ import emilyDawson from "@/public/EmilyDawson.jpg";
 function About() {
   return (
     <div className="max-w-[900px] mx-auto mt-8 bg-white p-6 max-md:py-0 md:rounded-md md:shadow-md">
-      <h1 className="text-3xl font-semibold mb-4">About Us</h1>
+      <h1 className="text-4xl font-bold mb-6 md:text-center">About Us</h1>
       <p className="text-gray-700 mb-4">
         At the Family Medicine Office, we believe in providing more than just healthcare – we offer a comforting space where your family becomes a part of ours. With a commitment to compassionate, patient-centered care, our dedicated team of healthcare professionals is here to guide you on your journey to optimal health and well-being.
       </p>

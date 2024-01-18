@@ -20,9 +20,9 @@ const LabelLister: React.FC<params> = ({
     return (
 <div className="gap-2 flex py-3">
         {labels.map((label) => (
-          <button key={label} className={`text-[19px] rounded-lg p-[3px] px-2 ${getLabelColorClass(label)}`}>
+          <span key={label} className={`text-[19px] rounded-lg p-[3px] px-2 ${getLabelColorClass(label)}`}>
             {label}
-          </button>
+          </span>
         ))}
       </div>
 );

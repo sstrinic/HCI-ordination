@@ -27,10 +27,10 @@ const CategoryFilter = () => {
   };
 
   return (
-    <label className="block text-gray-700 mb-2">
-      <span className="text-2xl font-semibold">Filter by Label:</span>
+    <label className="flex md:flex-col text-gray-700 mb-2 max-w-[20rem]">
+      <span className="md:text-2xl text-xl font-semibold self-center">Filter<span className="max-md:hidden"> by Label</span>:&nbsp;</span>
       <select
-        className="mt-1 block w-full p-2 rounded-md border border-gray-300 shadow-sm focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 bg-white"
+        className="mt-1 p-2 md:mx-auto md:w-[8rem] rounded-md border border-gray-300 shadow-sm focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 bg-white"
         onChange={handleSelectChange}
         value={categoryFilter}
       >
