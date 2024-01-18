@@ -8,13 +8,13 @@ const LabelLister: React.FC<params> = ({
     const getLabelColorClass = (label: any) => {
         switch (label) {
           case "world":
-            return "bg-blue-500";
+            return "bg-[#6FA3EF]";
           case "local":
-            return "bg-green-500";
+            return "bg-[#A3D3A5]";
           case "health":
-            return "bg-red-500";
+            return "bg-[#FBD3B0]";
           case "other":
-            return "bg-gray-500";
+            return "bg-[#D9D9D9]";
         }
       };
     return (

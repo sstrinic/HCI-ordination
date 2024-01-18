@@ -27,9 +27,13 @@ const CategoryFilter = () => {
   };
 
   return (
-    <label>
-      Filter by Label:
-      <select onChange={handleSelectChange} value={categoryFilter}>
+    <label className="block text-gray-700 mb-2">
+      <span className="text-2xl font-semibold">Filter by Label:</span>
+      <select
+        className="mt-1 block w-full p-2 rounded-md border border-gray-300 shadow-sm focus:outline-none focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 bg-white"
+        onChange={handleSelectChange}
+        value={categoryFilter}
+      >
         <option value="">All</option>
         <option value="other">Other</option>
         <option value="health">Health</option>
