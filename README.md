@@ -64,5 +64,6 @@ https://hci-ordination.vercel.app/
 |Services displayed||
 |Filter implemented & working||
 |MarkDown renderer implemented||
+|Refactored code||
 
 </div>

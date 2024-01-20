@@ -2,7 +2,7 @@ import React from 'react';
 import { parseISO, format } from 'date-fns';
 
 interface DateProps {
-  dateString: string; // Assuming dateString is a string
+  dateString: string;
 }
 
 const DateComponent: React.FC<DateProps> = ({ dateString }) => {

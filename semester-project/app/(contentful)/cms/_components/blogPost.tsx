@@ -34,7 +34,7 @@ const BlogPostic: React.FC<BlogPosticProps> = ({
         />
       </div>
       <p className={`text-gray-700 py-4 ${styles.markerDown}`}><MarkdownRenderer source={text} /></p>
-      <LabelLister labels={labels}/>
+      <LabelLister labels={labels} />
       <p className="text-gray-700">
         <b>Last Modified:</b> <Date dateString={publishedAt} />
       </p>

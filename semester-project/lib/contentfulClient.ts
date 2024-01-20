@@ -80,17 +80,17 @@ interface BlogPost {
 interface BlogPostDetail {
   blogPost: any;
   product: {
-  sys: {
-    date: string;
-  };
-  title: string;
-  text: string;
-  image: {
+    sys: {
+      date: string;
+    };
     title: string;
-    url: string;
-  };
-  label: string[];
-}
+    text: string;
+    image: {
+      title: string;
+      url: string;
+    };
+    label: string[];
+  }
 }
 
 const baseUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master`;
@@ -147,8 +147,8 @@ const getPostId = async (
       data: BlogPostDetail;
     };
     const responseProduct = body.data.blogPost;
-    const product: TypeBlogDetailItem ={
-      id: ids, 
+    const product: TypeBlogDetailItem = {
+      id: ids,
       name: responseProduct.title,
       description: responseProduct.text,
       image: responseProduct.image?.url,

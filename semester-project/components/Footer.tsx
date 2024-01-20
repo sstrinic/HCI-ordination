@@ -21,30 +21,30 @@ const Footer = () => (
       <div className="flex flex-col">
         <ul className="flex flex-row gap-4 mb-3">
           {pages.map(({ href, title }) => (
-                  <li key={href}>
-                    <Link href={href}>
-                        {title}
-                    </Link>
-                  </li>
-                ))}
+            <li key={href}>
+              <Link href={href}>
+                {title}
+              </Link>
+            </li>
+          ))}
         </ul>
         <div className="flex flex-row gap-4 justify-center">
-            <Link href="https://facebook.com">
-              <Icons.facebook className="w-3"/>
-            </Link>
-            <Link href="https://twitter.com">
-              <Icons.twitter className="w-6"/>
-            </Link>
-            <Link href="https://youtube.com">
-              <Icons.youtube className="w-4"/>
-            </Link>
+          <Link href="https://facebook.com">
+            <Icons.facebook className="w-3" />
+          </Link>
+          <Link href="https://twitter.com">
+            <Icons.twitter className="w-6" />
+          </Link>
+          <Link href="https://youtube.com">
+            <Icons.youtube className="w-4" />
+          </Link>
         </div>
       </div>
       <p className="font-thin text-xs">
-       ©2024. Family Medicine Office. All Rights Reserved.
+        ©2024. Family Medicine Office. All Rights Reserved.
       </p>
     </div>
-    </footer>
+  </footer>
 );
 
 export default Footer;
