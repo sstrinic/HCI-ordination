@@ -1,5 +1,5 @@
 import Image from "next/image";
-import bannerImg from "./banner.png";
+import bannerImg from "@/public/banner.png";
 import ServicesList from "./_components/ServicesList";
 import Link from "next/link";
 

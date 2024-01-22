@@ -29,13 +29,13 @@ const Footer = () => (
           ))}
         </ul>
         <div className="flex flex-row gap-4 justify-center">
-          <Link href="https://facebook.com">
+          <Link href="https://facebook.com" aria-label="Follow us on Facebook.">
             <Icons.facebook className="w-3" />
           </Link>
-          <Link href="https://twitter.com">
+          <Link href="https://twitter.com" aria-label="Follow us on X.">
             <Icons.twitter className="w-6" />
           </Link>
-          <Link href="https://youtube.com">
+          <Link href="https://youtube.com" aria-label="Follow us on Youtube.">
             <Icons.youtube className="w-4" />
           </Link>
         </div>
