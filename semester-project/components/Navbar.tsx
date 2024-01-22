@@ -63,7 +63,7 @@ const NavBar = () => {
                     className={cn(
                       "text-white py-[8px] px-[11px] rounded-lg",
                       {
-                        "text-white pointer-events-none spaner bg-[#0C8C19]":
+                        "text-white pointer-events-none spaner bg-[#0d8219]":
                           pathname === href,
                       }
                     )}
