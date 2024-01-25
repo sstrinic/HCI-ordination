@@ -10,22 +10,22 @@ const teamMembers: MemberCardProps[] = [
   {
     name: "Dr. Sarah Patel",
     imgURL: "/SarahPatel.jpg",
-    text: "Experienced family physician specializing in preventive care and women's health.",
+    text: "Dr. Sarah Patel is an experienced family physician, specializing in preventive care and women's health. With a focus on proactive wellness and personalized support, she ensures comprehensive healthcare for her patients.",
   },
   {
     name: "Dr. James Nguyen",
     imgURL: "/JamesNguyen.jpg",
-    text: "Passionate about holistic healthcare and promoting wellness in all age groups.",
+    text: "Dr. James Nguyen is a dedicated healthcare professional whose passion lies in advancing holistic healthcare, fostering a comprehensive approach to well-being. With a focus on promoting wellness across all age groups, he strives to create personalized and enduring health solutions for every individual under his care.",
   },
   {
     name: "Nurse Emily Dawson",
     imgURL: "/EmilyDawson.jpg",
-    text: "Dedicated to patient well-being, with a focus on pediatric and adolescent health.",
+    text: "Nurse Emily Dawson is passionately committed to enhancing the overall well-being of her patients, placing particular emphasis on the health and care of children and adolescents. Through her dedication and specialized focus on pediatric and adolescent health, she ensures a compassionate and nurturing healthcare experience for young individuals under her care.",
   },
   {
     name: "Nurse Carlos Rodriguez",
     imgURL: "/CarlosRodriguez.jpg",
-    text: "Enthusiastic healthcare professional with a passion for sports health and rehabilitation.",
+    text: "Nurse Carlos Rodriguez is a dedicated healthcare professional known for his vibrant enthusiasm and specialized expertise in sports health and rehabilitation, bringing a dynamic and compassionate approach to patient care. With a fervent commitment to promoting wellness and aiding in recovery, Carlos is a valued member of the healthcare team, combining his passion for healthcare with a focus on supporting individuals in their journey towards optimal physical well-being.",
   },
 ];
 
