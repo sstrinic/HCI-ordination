@@ -1,3 +1,3 @@
 ## Public link to project
 
-https://hci-ordination.vercel.app/
+https://ordinacijahorvat.vercel.app/

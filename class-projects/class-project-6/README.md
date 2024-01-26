@@ -5,4 +5,4 @@ Design of mobile version of Home page created with Figma: [MobileVersion-v1.png]
 
 ## Public link to project
 
-https://hci-ordination.vercel.app/
+https://ordinacijahorvat.vercel.app/
