@@ -23,7 +23,7 @@ const ServicesSection = () => (
   <section className="container flex flex-col gap-7 items-center m-auto max-w-[1024px]">
     <div className="text-center mt-4 linerz">
       <h2 className="font-roboto-condensed text-2xl md:text-3xl font-extrabold text-brand-purple-900">
-        Services we provide:
+        Categories of services:
       </h2>
     </div>
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">

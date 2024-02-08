@@ -10,7 +10,7 @@ const teamMembers: MemberCardProps[] = [
   {
     name: "Dr. Sarah Patel",
     imgURL: "/SarahPatel.jpg",
-    text: "Dr. Sarah Patel is an experienced family physician, specializing in preventive care and women's health. With a focus on proactive wellness and personalized support, she ensures comprehensive healthcare for her patients.",
+    text: "Dr. Sarah Patel is an experienced family physician, specializing in preventive care and women's health. With a focus on proactive wellness and personalized support, she ensures comprehensive healthcare for her patients. Dr. Patel brings so much experience to our office.",
   },
   {
     name: "Dr. James Nguyen",
@@ -25,12 +25,12 @@ const teamMembers: MemberCardProps[] = [
   {
     name: "Nurse Carlos Rodriguez",
     imgURL: "/CarlosRodriguez.jpg",
-    text: "Nurse Carlos Rodriguez is a dedicated healthcare professional known for his vibrant enthusiasm and specialized expertise in sports health and rehabilitation, bringing a dynamic and compassionate approach to patient care. With a fervent commitment to promoting wellness and aiding in recovery, Carlos is a valued member of the healthcare team, combining his passion for healthcare with a focus on supporting individuals in their journey towards optimal physical well-being.",
+    text: "Nurse Carlos Rodriguez is a dedicated healthcare professional known for his specialized expertise in sports health and rehabilitation. With a commitment to promoting wellness and aiding in recovery, Carlos is a valued member of the team, combining his passion for healthcare with a focus on supporting individuals in their journey towards optimal physical well-being.",
   },
 ];
 
 const About = () => (
-  <div className="max-w-[900px] mx-auto mt-8 bg-white p-6 max-md:py-0 md:rounded-md md:shadow-md">
+  <div className="max-w-[900px] mx-auto mt-8 bg-white p-6 max-md:py-0">
     <h1 className="text-4xl font-bold mb-6 md:text-center">About Us</h1>
     <p className="text-gray-700 mb-4">
       At the Family Medicine Office, we believe in providing more than just healthcare – we offer a comforting space where your family becomes a part of ours. With a commitment to compassionate, patient-centered care, our dedicated team of healthcare professionals is here to guide you on your journey to optimal health and well-being.
@@ -50,7 +50,7 @@ const About = () => (
               alt={teamMember.name}
               width={250}
               height={250}
-              className="md:h-60 h-56 rounded-lg border-[1px] border-neutral-800 md:w-60 w-56"
+              className="md:h-60 h-56 rounded-lg border-[1px] border-neutral-600 md:w-60 w-56"
             />
             <div className="mt-2 text-left">
               <p className="text-base font-semibold">{teamMember.name}</p>

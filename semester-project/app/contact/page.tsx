@@ -1,6 +1,8 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import Image from 'next/image';
+import cross from "@/public/contact.jpeg";
 
 function Contact() {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -25,7 +27,7 @@ function Contact() {
   };
 
   return (
-    <div className="max-w-[900px] mx-auto mt-8 bg-white p-6 max-md:py-0 md:rounded-md md:shadow-md relative">
+    <div className="max-w-[900px] mx-auto mt-8 bg-white p-6 max-md:py-0 relative">
       <h1 className="text-4xl font-bold mb-6 md:text-center">Contact Us</h1>
       <p className={isSuccess ? "fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 text-white p-4 rounded-md mb-4 text-center text-5xl" : "hidden"}>
         Email sent successfully.
@@ -73,35 +75,41 @@ function Contact() {
           </div>
         </form>
 
-        <div className="md:grid-rows-3 grid">
-          <div></div>
-          <div className='space-y-4'>
+        <div className="flex flex-col">
+          <div className='space-y-4 md:my-5 ml-3'>
 
             <div className="flex items-center">
               <FaPhone className="text-[#1563B2] mr-2" />
               <div>
-                <p className="text-sm font-semibold">Phone</p>
-                <p className="text-sm text-gray-600">(123) 456-7890</p>
+                <p className="text-sm md:text-base font-semibold">Phone</p>
+                <p className="text-sm md:text-base text-gray-600">(123) 456-7890</p>
               </div>
             </div>
 
             <div className="flex items-center">
               <FaEnvelope className="text-[#1563B2] mr-2" />
               <div>
-                <p className="text-sm font-semibold">Email</p>
-                <p className="text-sm text-gray-600">info@example.com</p>
+                <p className="text-sm md:text-base font-semibold">Email</p>
+                <p className="text-sm md:text-base text-gray-600">info@example.com</p>
               </div>
             </div>
 
             <div className="flex items-center">
               <FaMapMarkerAlt className="text-[#1563B2] mr-2" />
               <div>
-                <p className="text-sm font-semibold">Address</p>
-                <p className="text-sm text-gray-600">123 Main St, Cityville, USA</p>
+                <p className="text-sm md:text-base font-semibold">Address</p>
+                <p className="text-sm md:text-base text-gray-600">123 Main St, Cityville, USA</p>
               </div>
             </div>
           </div>
-          <div></div>
+          <div className='p-7 max-md:hidden'>
+            <Image
+            src={cross}
+            alt="Banner image"
+            width={300}
+            object-fit="cover"
+          ></Image>
+          </div>
         </div>
       </div>
     </div>
