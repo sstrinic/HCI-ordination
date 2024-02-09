@@ -28,7 +28,7 @@ const Footer = () => (
             </li>
           ))}
         </ul>
-        <div className="flex flex-row gap-4 justify-center">
+        <div className="flex flex-row gap-4 justify-center items-center">
           <Link href="https://facebook.com" aria-label="Follow us on Facebook.">
             <Icons.facebook className="w-3" />
           </Link>

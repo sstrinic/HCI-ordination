@@ -76,7 +76,7 @@ function Contact() {
         </form>
 
         <div className="flex flex-col">
-          <div className='space-y-4 md:my-5 ml-3'>
+          <div className='space-y-4 md:my-5 md:ml-3'>
 
             <div className="flex items-center">
               <FaPhone className="text-[#1563B2] mr-2" />
