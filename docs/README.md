@@ -1,3 +1,4 @@
 # Project report
 
-Include any project documentation in this folder (your final report in Markdown format or a link to it).
+Link to documentation:
+https://www.notion.so/Ordinacija-Horvat-e74bc96caeb64450aa379283022b1df4

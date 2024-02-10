@@ -14,7 +14,7 @@ https://ordinacijahorvat.vercel.app/
 
 - **`/semester-project`**: The source code of main project.
 - **`/class-projects`**: Results of mini class semester projects.
-- **`/docs`**: Includes project documentation (final report in Markdown format).
+- **`/docs`**: Includes project documentation (final report on Notion site).
 
 
 ## Project timeline
